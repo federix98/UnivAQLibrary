@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.frontend.VisualizzaStessiAutoriController">
+   <children>
+      <AnchorPane prefHeight="441.0" prefWidth="700.0" styleClass="background" stylesheets="@../application.css">
+         <children>
+            <ButtonBar layoutX="20.0" layoutY="399.0" prefHeight="40.0" prefWidth="620.0">
+              <buttons>
+                  <Button fx:id="DettagliButton" mnemonicParsing="false" onAction="#handleDettagli" styleClass="sideButton" text="Dettagli" />
+              </buttons>
+            </ButtonBar>
+            <TableView fx:id="TabellaPubblicazioni" layoutX="26.0" layoutY="44.0" prefHeight="357.0" prefWidth="648.0" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="44.0">
+              <columns>
+                <TableColumn fx:id="ISBNtc" editable="false" prefWidth="126.66669178009033" resizable="false" sortable="false" text="ISBN" />
+                <TableColumn fx:id="Titolotc" editable="false" prefWidth="322.6666564941406" resizable="false" sortable="false" text="Titolo" />
+                  <TableColumn fx:id="Autoritc" editable="false" prefWidth="182.0" resizable="false" sortable="false" text="Autori" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

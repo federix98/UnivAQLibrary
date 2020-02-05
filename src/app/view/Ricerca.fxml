@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.frontend.RicercaController">
+   <children>
+      <AnchorPane prefHeight="435.0" prefWidth="650.0" stylesheets="@../application.css">
+         <children>
+            <TextField fx:id="KeyField" layoutX="24.0" layoutY="125.0" prefHeight="33.0" prefWidth="320.0" promptText="Cerca" />
+            <Button fx:id="CercaButton" layoutX="371.0" layoutY="126.0" mnemonicParsing="false" onAction="#handleCerca" text="Cerca" />
+            <ChoiceBox fx:id="FilterField" layoutX="475.0" layoutY="126.0" onMouseClicked="#handleBox" prefWidth="150.0" styleClass="choicebox" />
+            <Label layoutX="191.0" layoutY="24.0" styleClass="loginTitle" text="Cerca pubblicazioni" />
+            <ImageView fitHeight="46.0" fitWidth="53.0" layoutX="130.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../res/imgs/search.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="TabellaPubblicazioni" layoutX="24.0" layoutY="189.0" prefHeight="239.0" prefWidth="601.0">
+              <columns>
+                <TableColumn fx:id="ISBNtc" editable="false" prefWidth="75.0" sortable="false" text="ISBN" />
+                <TableColumn fx:id="Titolotc" editable="false" prefWidth="75.0" sortable="false" text="Titolo" />
+                  <TableColumn fx:id="Autoretc" editable="false" prefWidth="75.0" sortable="false" text="Autore" />
+                  <TableColumn fx:id="Editoretc" editable="false" prefWidth="75.0" sortable="false" text="Editore" />
+                  <TableColumn fx:id="Liketc" editable="false" prefWidth="75.0" sortable="false" text="# Like" />
+                  <TableColumn fx:id="Recensionitc" editable="false" prefWidth="106.66671752929688" sortable="false" text="# Recensioni" />
+                  <TableColumn fx:id="Datatc" editable="false" prefWidth="111.99995930989587" sortable="false" text="Data" />
+              </columns>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </TableView>
+            <TextField fx:id="NomeAutoreField" layoutX="32.0" layoutY="125.0" prefHeight="33.0" prefWidth="144.0" promptText="Nome" />
+            <TextField fx:id="CognomeAutoreField" layoutX="191.0" layoutY="125.0" prefHeight="33.0" prefWidth="160.0" promptText="Cognome" />
+            <Label fx:id="ErrorLabel" layoutX="24.0" layoutY="86.0" styleClass="error" text="Errore" />
+         </children></AnchorPane>
+   </children>
+</HBox>

@@ -1,0 +1,12 @@
+package app.utility;
+
+public enum ManageCapabilities {
+	RICERCA, 
+	CLASSIFICHE,
+	PROFILO,
+	INFORMAZIONI,
+	APPROVA_RECENSIONI,
+	GESTIONE_CATALOGO,
+	LOGS,
+	GESTIONE_UTENTI
+}
