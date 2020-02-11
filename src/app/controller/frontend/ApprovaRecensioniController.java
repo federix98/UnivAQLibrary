@@ -16,7 +16,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class ApprovaRecensioniController extends ControllerFrontend {
 
 	@FXML
@@ -49,7 +53,9 @@ public class ApprovaRecensioniController extends ControllerFrontend {
 	private TextField ISBNField;
 	
 	
-	
+	/**
+	 * Approva una recensione di un utente
+	 */
 	@FXML
 	private void handleApprova() {
 		
@@ -62,6 +68,9 @@ public class ApprovaRecensioniController extends ControllerFrontend {
 		aggiorna();
 	}
 
+	/**
+	 * Aggiorna la lista delle recensioni da approvare
+	 */
 	private void aggiorna() {
 		
 		listaRecensioni.clear();
@@ -85,6 +94,10 @@ public class ApprovaRecensioniController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Riempie le textfield con i dati della recensione in esame
+	 * @param rec
+	 */
 	private void mostraRecensione(Recensione rec) {
 		
 		if(rec == null) {
@@ -103,6 +116,9 @@ public class ApprovaRecensioniController extends ControllerFrontend {
 		
 	}
 
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		

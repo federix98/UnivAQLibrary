@@ -12,24 +12,37 @@ import app.model.PubblicazioneCompleta;
 import app.model.PubblicazioneRistampa;
 import app.model.Ristampa;
 import app.model.Sorgente;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class ControllerPubblicazione extends ControllerBackend {
 
 	private static ControllerPubblicazione istanzaController = new ControllerPubblicazione();
 	private DAOPubblicazione DAO = null;
 	
+	/**
+	 * Costruttore privato del controller
+	 */
  	private ControllerPubblicazione() {
 		
 		DAO = DAOFactory.getDAOFactory(0).getDAOPubblicazione();
 		
 	}
 	
+ 	/**
+ 	 * 
+ 	 * @return istanza singleton del controller
+ 	 */
 	public static ControllerPubblicazione getIstanza() {
 		return istanzaController;
 	}
 	
-	// public PubblicazioneCompleta getDatiPubblicazione(Pubblicazione p) {
-	
+	/**
+	 * Inserisci una pubblicazione nel sistema
+	 * @param pubb
+	 */
 	public void inserisciPubblicazione(PubblicazioneCompleta pubb) {
 		
 		if(pubb.getAutori().isEmpty()) return;
@@ -49,37 +62,69 @@ public class ControllerPubblicazione extends ControllerBackend {
 		for(Sorgente s : pubb.getSorgenti()) DAOFactory.getDAOFactory(0).getDAOSorgente().inserisciSorgente(s.getURI(), s.getTipo(), s.getFormato(), s.getDescrizione(), IDpubblicazione, IDUtente);
 	}
 	
+	/**
+	 * 
+	 * @param IDPubblicazione
+	 * @return Dati della pubblicazione selezionata
+	 */
 	public PubblicazioneCompleta getDatiPubblicazione(Integer IDPubblicazione) {
 		
 		return DAO.getDatiPubblicazione(IDPubblicazione);
 		
 	}
 	
+	/**
+	 * 
+	 * @param IDPubblicazione
+	 * @return lista pubblicazioni con gli stessi autori della pubblicazione selezionata
+	 */
 	public ArrayList<Pubblicazione> getListaPubblicazioniStessiAutori(Integer IDPubblicazione) {
 		return DAO.getPubblcazioniStessiAutori(IDPubblicazione);
 	}
 	
+	/**
+	 * 
+	 * @param numPag
+	 * @return lista delle pubblicazioni per pagina
+	 */
 	public ArrayList<Pubblicazione> getListaPubblicazioni(Integer numPag) {
 		System.out.println("Controller getListaPubblicazioni");
 		return DAO.getListaPubblicazioni(numPag);
 	}
 	
+	/**
+	 * 
+	 * @param IDUtente
+	 * @return lista delle pubblicazioni che ha inserito quell'utente
+	 */
 	public ArrayList<Pubblicazione> getListaPubblicazoniUtente(Integer IDUtente) {
 		return DAO.getListaPubblicazioneUtente(IDUtente);
 	}
 	
+	/**
+	 * 
+	 * @param titolo
+	 * @return lista pubblicazioni con quel titolo
+	 */
 	public ArrayList<Pubblicazione> getListaPubblicazioniTitolo(String titolo) {
 		return DAO.getListaPubblicazioniTitolo(titolo);
 	}
 	
+	/**
+	 * 
+	 * @param ISBN
+	 * @return lista pubblicazioni con quel codice ISBN
+	 */
 	public Pubblicazione getPubblicazioneISBN(String ISBN) {
 		return DAO.getListaPubblicazioneISBN(ISBN);
 	}
 	
-	public ArrayList<Pubblicazione> getListaPubblicazioniAutore(Autore autore) {
-		return DAO.getListaPubblicazioniAutore(autore.getID());
-	}
-	
+	/**
+	 * 
+	 * @param nomeAutore
+	 * @param cognomeAutore
+	 * @return lista pubblicazioni con quell'autore
+	 */
 	public ArrayList<Pubblicazione> getListaPubblicazioniAutoreNome(String nomeAutore, String cognomeAutore) {
 		
 		if(nomeAutore.isBlank() || nomeAutore.isEmpty()) {
@@ -92,7 +137,12 @@ public class ControllerPubblicazione extends ControllerBackend {
 		
 		return DAO.getListaPubblicazioniAutoreNomeCognome(nomeAutore, cognomeAutore);
 	}
-	
+
+	/**
+	 * 
+	 * @param parolaChiave
+	 * @return lista pubblicazioni con quella parola chiave
+	 */
 	public ArrayList<Pubblicazione> getListaPubblicazioniParolaChiave(String parolaChiave) {
 		
 		ParolaChiave keyword = DAOFactory.getDAOFactory(0).getDAOParolaChiave().getParolaChiave(parolaChiave);
@@ -100,14 +150,27 @@ public class ControllerPubblicazione extends ControllerBackend {
 		return DAO.getListaPubblicazioniParolaChiave(keyword.getID());// DA MODIFICARE
 	}
 	
+	/**
+	 * 
+	 * @return lista ultime pubblicazioni inserite
+	 */
 	public ArrayList<Pubblicazione> getUltimeInserite() {
 		return DAO.getUltimeInserite();
 	}
 	
+	/**
+	 * 
+	 * @return lista ultime pubblicazioni aggiornate
+	 */
 	public ArrayList<Pubblicazione> getUltimeAggiornate() {
 		return DAO.getUltimeAggiornate();
 	}
 
+	/**
+	 * Aggiorna una pubblicazione
+	 * @param pubc
+	 * @param pubModificata
+	 */
 	public void aggiornaPubblicazione(PubblicazioneCompleta pubc, PubblicazioneCompleta pubModificata) {
 		
 		if(!pubc.getISBN().equals(pubModificata.getISBN())) DAO.aggiornaISBN(pubc.getID(), pubModificata.getISBN(), ControllerSessione.getIstanza().getUtenteLoggato().getID());
@@ -121,10 +184,19 @@ public class ControllerPubblicazione extends ControllerBackend {
 		
 	}
 	
+	/**
+	 * 
+	 * @param IDPubblicazione
+	 * @return pubblicazione con quell'ID
+	 */
 	public PubblicazioneCompleta findByID(Integer IDPubblicazione) {
 		return DAO.getDatiPubblicazione(IDPubblicazione);
 	}
 
+	/**
+	 * 
+	 * @return pubblicazioni per le quali è disponibile un download
+	 */
 	public ArrayList<Pubblicazione> getListaPubblicazioniDownload() {
 		return DAO.getListaPubblicazioniDownlaodable();
 	}

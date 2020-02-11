@@ -1,5 +1,9 @@
 package app.model;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class Sorgente {
 
 	

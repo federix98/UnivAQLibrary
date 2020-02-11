@@ -7,7 +7,11 @@ import app.utility.ManageCapabilities;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class PannelloGestioneController extends ControllerFrontend {
 
 	@FXML
@@ -59,7 +63,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 	private HBox Box13;
 	
 	
-	// IMPLEMENTED
+	/**
+	 * Caricamento del pannello di gestione in base al proprio ruolo
+	 */
 	public void caricaPannello() {
 		
 		Box00.setVisible(ControllerAuth.getInstance().abilita(ManageCapabilities.RICERCA));
@@ -73,7 +79,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 		
 	}
 	
-	// IMPLEMENTED
+	/**
+	 * Handler attiva ricerca
+	 */
 	@FXML
 	public void handleRicerca() {
 		
@@ -81,7 +89,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 		
 	}
 	
-	// IMPLEMENTED
+	/**
+	 * Handler attiva classifiche
+	 */
 	@FXML
 	public void handleClassifiche() {
 		
@@ -89,7 +99,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 		
 	}
 	
-	// IMPLEMENTED
+	/**
+	 * Handler attiva Informazioni
+	 */
 	@FXML
 	public void handleImpostazioni() {
 		
@@ -97,7 +109,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 		
 	}
 	
-	// IMPLEMENTED
+	/**
+	 * Handler attiva profilo
+	 */
 	@FXML
 	public void handleProfilo() {
 		
@@ -106,7 +120,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 		
 	}
 	
-	// IMPLEMENTED
+	/**
+	 * Handler attiva recensioni
+	 */
 	@FXML
 	public void handleRecensioni() {
 		
@@ -114,7 +130,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 		
 	}
 	
-	// IMPLEMENTED
+	/**
+	 * Handler attiva logs
+	 */
 	@FXML
 	public void handleLogs() {
 		
@@ -122,7 +140,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 		
 	}
 	
-	// IMPLEMENTED
+	/**
+	 * Handler attiva gestione catalogo
+	 */
 	@FXML
 	public void handleGestioneCatalogo() {
 		
@@ -131,7 +151,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 	}
 
 	
-	// IMPLEMENTED
+	/**
+	 * Handler attiva gestione utenti
+	 */
 	@FXML
 	public void handleGestioneUtenti() {
 		
@@ -140,7 +162,9 @@ public class PannelloGestioneController extends ControllerFrontend {
 	}
 	
 
-
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		

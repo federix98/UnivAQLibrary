@@ -15,7 +15,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class AggiungiAutoreController extends ControllerFrontend {
 
 	@FXML

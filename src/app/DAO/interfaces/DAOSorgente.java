@@ -3,7 +3,11 @@ package app.DAO.interfaces;
 import java.util.ArrayList;
 
 import app.model.Sorgente;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public interface DAOSorgente {
 
 	public Integer inserisciSorgente(String URI, String Tipo, String Formato, String Descrizione, Integer IDPubblicazione, Integer IDUtente);

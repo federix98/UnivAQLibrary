@@ -10,7 +10,11 @@ import app.DAO.interfaces.DAORecensione;
 import app.DAO.interfaces.DAORistampa;
 import app.DAO.interfaces.DAOSorgente;
 import app.DAO.interfaces.DAOUtente;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public abstract class DAOFactory {
 
 	/** Membro statico per la factory MySQL */

@@ -15,7 +15,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class VisualizzaStessiAutoriController extends ControllerFrontend {
 	
 	@FXML
@@ -36,11 +40,9 @@ public class VisualizzaStessiAutoriController extends ControllerFrontend {
     
     private ObservableList<Pubblicazione> listaPubblicazioni = FXCollections.observableArrayList();
     
-	public void initialize() {
-		
-		
-	}
-
+    /**
+     * Aggiorna i dati della tabella
+     */
 	private void aggiornaTabella() {
 		
 		listaPubblicazioni.clear();
@@ -90,6 +92,9 @@ public class VisualizzaStessiAutoriController extends ControllerFrontend {
 		
 	}
 
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		
@@ -97,6 +102,9 @@ public class VisualizzaStessiAutoriController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Dettagli della pubblicazione
+	 */
 	@FXML
 	private void handleDettagli() {
 		

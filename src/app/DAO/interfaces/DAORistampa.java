@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import app.model.Ristampa;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public interface DAORistampa {
 
 	public void inserisciRistampa(LocalDate dataRistampa, Integer numRistampa, Integer IDUtente, Integer IDPubblicazione);

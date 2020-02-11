@@ -6,7 +6,11 @@ import java.time.LocalDate;
 import app.model.Moderatore;
 import app.model.Utente;
 
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public interface DAOUtente {
 	
 	public Integer inserisciUtente(String nick, String email, String password, String nome, String cognome, LocalDate datanascita, String luogonascita, String residenza);

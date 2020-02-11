@@ -18,7 +18,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class LogsController extends ControllerFrontend {
 
 	// FXML VARIABLES

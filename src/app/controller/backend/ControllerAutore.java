@@ -8,7 +8,11 @@ import app.controller.abstracts.ControllerBackend;
 import app.model.Autore;
 import app.model.Pubblicazione;
 import app.model.Utente;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class ControllerAutore extends ControllerBackend {
 	
 	private static ControllerAutore instance = new ControllerAutore();
@@ -27,7 +31,7 @@ public class ControllerAutore extends ControllerBackend {
 	/**
 	*
 	* Ritorna l'istanza Singleton
-	* 
+	* @return instance
 	**/
 	public static ControllerAutore getInstance() {
 		return instance;
@@ -50,21 +54,12 @@ public class ControllerAutore extends ControllerBackend {
 	*
 	* Ritorna la lista degli autori in base al numero pagina
 	* @param numPag   Numero di pagina
-	* 
+	* @return listaAutori
 	**/
 	public ArrayList<Autore> getListaAutori(Integer numPag) {
 		return DAO.getListaAutori(numPag);
 	}
-	
-	/**
-	*
-	* Ritorna la lista di autori in una pubblicazione sotto forma di stringa
-	* @param Autore   Oggetto pubblicazione da analizzare
-	* 
-	**/
-	/*public String getListaAutoriPubblicazioneString(Pubblicazione pubblicazione) {
-		return DAO.getListaAutoriPubblicazioneString(pubblicazione.getID());
-	}*/
+
 	
 	/**
 	*
@@ -102,6 +97,7 @@ public class ControllerAutore extends ControllerBackend {
 	*
 	* Ritorna la stringa "Nome Cognome" dell'autore
 	* @param Autore   Oggetto autore da aggiornare
+	* @return infoAutore
 	* 
 	**/
 	public static String returnInfo(Autore autore) {

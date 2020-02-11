@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import app.controller.backend.ControllerAutore;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class Pubblicazione {
 
 	private Integer ID;

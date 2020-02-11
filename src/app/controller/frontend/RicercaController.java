@@ -20,7 +20,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class RicercaController extends ControllerFrontend {
 
 	@FXML
@@ -87,7 +91,7 @@ public class RicercaController extends ControllerFrontend {
 					
 					ISBNtc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getISBN()));
 			    	Titolotc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTitolo()));
-			    	Autoretc.setCellValueFactory(cellData -> new SimpleStringProperty(new MySQL_DAOAutore().getListaAutoriPubblicazioneString(cellData.getValue().getID())));
+			    	Autoretc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getListaAutori()));
 			    	Editoretc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEditore()));
 			    	Liketc.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getNumLike()).asObject());
 			    	Recensionitc.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getNumLike()).asObject());
@@ -207,6 +211,10 @@ public class RicercaController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Visualizza la pubblicazione scelta
+	 * @param newValue
+	 */
 	private void visualizzaPubblicazione(Pubblicazione newValue) {
 		
 		if(newValue == null) return;
@@ -235,6 +243,9 @@ public class RicercaController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Handler per cambiare i box di ricerca in base al parametro
+	 */
 	@FXML
 	private void handleBox() {
 		
@@ -254,6 +265,9 @@ public class RicercaController extends ControllerFrontend {
 		FilterField.getSelectionModel().selectedItemProperty().addListener(listener);
 	}
 	
+	/**
+	 * Metodo invocato al primo caricamento della schermata
+	 */
 	public void initialize() {
 		
 		FilterField.getItems().clear();
@@ -273,6 +287,9 @@ public class RicercaController extends ControllerFrontend {
 		
 	}
 	
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		

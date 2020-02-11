@@ -12,7 +12,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class LoginController extends ControllerFrontend {
 	
 	@FXML
@@ -30,6 +34,9 @@ public class LoginController extends ControllerFrontend {
 	@FXML
 	private Hyperlink linkRegistrazione;
 	
+	/**
+	 * Handler per accedere al sistema
+	 */
 	@FXML
 	public void handleAccedi() {
 		
@@ -65,22 +72,23 @@ public class LoginController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Handler per registrarsi
+	 */
 	@FXML
 	public void handleRegistrati() {
 		ControllerSchermo.istanzaManager().activateOnCenter("Registrazione");
 	}
 
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		
 		NonValido.setVisible(false);
 		Username.setText("");
 		Password.setText("");
-		
-	}
-	
-	@FXML
-	private void initialize() {
 		
 	}
 

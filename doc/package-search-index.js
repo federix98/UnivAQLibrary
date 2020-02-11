@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"app.controller.abstracts"},{"l":"app.controller.backend"},{"l":"app.controller.frontend"},{"l":"app.DAO"},{"l":"app.DAO.interfaces"},{"l":"app.DAO.MySQL"},{"l":"app.model"},{"l":"app.utility"}]

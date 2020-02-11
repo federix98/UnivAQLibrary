@@ -15,7 +15,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class ClassificheController extends ControllerFrontend {
 	
 	@FXML
@@ -57,12 +61,9 @@ public class ClassificheController extends ControllerFrontend {
     
     private ObservableList<Pubblicazione> listaUltimeAggiornate = FXCollections.observableArrayList();
 
-	public void initialize() {
-		
-		
-	}
-
-
+    /**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		

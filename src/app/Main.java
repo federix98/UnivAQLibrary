@@ -12,7 +12,11 @@ import javafx.util.Duration;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class Main extends Application {
 	
 	private Stage primaryStage;

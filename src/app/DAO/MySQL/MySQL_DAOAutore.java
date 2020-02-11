@@ -11,7 +11,8 @@ import app.DAO.interfaces.DAOAutore;
 import app.model.Autore;
 
 /**
- * @author agdimenna
+ * 
+ * @author Federico Di Menna
  *
  */
 public class MySQL_DAOAutore implements DAOAutore {
@@ -229,6 +230,12 @@ public class MySQL_DAOAutore implements DAOAutore {
 		
 	}
 
+	/**
+	 * Aggunge la relazione tra autore e pubblicazione
+	 * @param IDAutore
+	 * @param IDPubblicazione
+	 * @param IDUtente
+	 */
 	@Override
 	public void aggiungiScritto(Integer IDAutore, Integer IDPubblicazione, Integer IDUtente) {
 		
@@ -255,12 +262,6 @@ public class MySQL_DAOAutore implements DAOAutore {
 
 		}
 		
-	}
-
-	@Override
-	public String getListaAutoriPubblicazioneString(Integer IDPubblicazione) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

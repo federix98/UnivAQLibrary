@@ -14,7 +14,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class Splash {
 
     static Scene splash;
@@ -22,6 +26,10 @@ public class Splash {
     final private Pane pane;
     final private Transition ani;
 
+    /**
+	 * Costruttore splash
+	 * 
+	 */
     public Splash() {
         pane = new Pane();
         pane.setId("splashPane");
@@ -35,6 +43,10 @@ public class Splash {
         ani = new AnimatedGif(getClass().getResource("utility/gifLoading.gif").toExternalForm(), 1000);
     }
 
+    /**
+	 * Metodo che rende visibile la splash
+	 * 
+	 */
     public void show() {
     	
         ani.setCycleCount(6);
@@ -55,10 +67,20 @@ public class Splash {
         
     }
 
+    /**
+	 * Ritorna l'oggetto Splash
+	 *
+	 * @return splash
+	 */
     public Scene getSplashScene() {
         return splash;
     }
 
+    /**
+	 * Ritorna l'animazione transition
+	 *
+	 * @return ani
+	 */
     public Transition getTransition() {
         return ani;
     }

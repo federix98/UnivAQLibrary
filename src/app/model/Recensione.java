@@ -1,7 +1,11 @@
 package app.model;
 
 import java.time.LocalDateTime;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class Recensione {
 
 	

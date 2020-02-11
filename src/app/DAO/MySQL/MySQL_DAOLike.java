@@ -7,9 +7,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import app.DAO.interfaces.DAOLike;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class MySQL_DAOLike implements DAOLike {
 
+	/**Inserisci un Like
+	 * 
+	 * @param IDPubblicazione
+	 * @param IDUtente
+	 */
 	@Override
 	public void inserisciLike(Integer IDPubblicazione, Integer IDUtente) {
 		
@@ -36,6 +45,13 @@ public class MySQL_DAOLike implements DAOLike {
 		
 	}
 
+	/**
+	 * 
+	 * @param IDPubblicazione
+	 * @param IDUtente
+	 * 
+	 * @return true se esiste un like tra le entità, false altrimenti
+	 */
 	@Override
 	public Boolean getLike(Integer IDPubblicazione, Integer IDUtente) {
 		
@@ -68,6 +84,12 @@ public class MySQL_DAOLike implements DAOLike {
 		
 	}
 
+	/**
+	 * Rimuovi il like
+	 * 
+	 * @param IDPubblicazione
+	 * @param IDUtente
+	 */
 	@Override
 	public void eliminaLike(Integer IDPubblicazione, Integer IDUtente) {
 		

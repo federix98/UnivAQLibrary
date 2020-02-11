@@ -11,7 +11,11 @@ import java.util.ArrayList;
 import app.DAO.interfaces.DAOUtente;
 import app.model.Moderatore;
 import app.model.Utente;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class MySQL_DAOUtente implements DAOUtente{
 
 	/**
@@ -399,7 +403,18 @@ public class MySQL_DAOUtente implements DAOUtente{
 		
 	}
 
-	
+	/**Aggiorna i metadati dell'utente
+	 * 
+	 * @param ID
+	 * @param nick
+	 * @param email
+	 * @param password
+	 * @param nome
+	 * @param cognome
+	 * @param datanascita
+	 * @param luogonascita
+	 * @param residenza
+	 */
 	@Override
 	public void aggiornaUtente(Integer ID, String nick, String email, String password, String nome, String cognome,
 			LocalDate datanascita, String luogonascita, String residenza) {
@@ -440,7 +455,11 @@ public class MySQL_DAOUtente implements DAOUtente{
 		
 	}
 
-	
+	/**Aggiorna la password dell'utente
+	 * 
+	 * @param hashedPassword
+	 * @param IDUtente
+	 */
 	@Override
 	public void aggiornaPassword(String hashedPassword, Integer IDUtente) {
 		

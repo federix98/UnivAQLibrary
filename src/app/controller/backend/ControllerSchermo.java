@@ -15,7 +15,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class ControllerSchermo extends ControllerBackend {
 
 	
@@ -32,41 +36,75 @@ public class ControllerSchermo extends ControllerBackend {
     private String paneAttuale = null;
     private HomePageController mainController = null;
 
-    
+    /**
+     * 
+     * @return la scena principale del sistema
+     */
     public Scene getMain() {
 		return main;
 	}
 
+    /**
+     * Setta la scena principale del sistema
+     * @param main
+     */
 	public void setMain(Scene main) {
 		this.main = main;
 	}
 
+	/**
+	 * 
+	 * @return il root layout del sistema
+	 */
 	public BorderPane getRootLayout() {
 		return rootLayout;
 	}
 
+	/**
+	 * Setta il rootLayout del sistema
+	 * @param rootLayout
+	 */
 	public void setRootLayout(BorderPane rootLayout) {
 		this.rootLayout = rootLayout;
 	}
 
-	// SINGLETON GETINSTANCE
+	/**
+	 * 
+	 * @return istanza singleton del controller
+	 */
     public static ControllerSchermo istanzaManager() {
     	return windowManager;
     }
     
+    /**
+     * Costruttore privato del controller
+     */
     private ControllerSchermo() {
     }
 
     // SINGLETON OPERATIONS
     
+    /**
+     * 
+     * @return l'hashmap <Nome, Schermata> dei layout del sistema
+     */
     public HashMap<String, Pane> getScreenMap() {
 		return screenMap;
 	}
     
+    /**
+     * 
+     * @return l'hashmap <Nome, Controller> dei controller frontend del sistema
+     */
     public HashMap<String, ControllerFrontend> getControllerMap() {
 		return controllerMap;
 	}
 	
+    /**Carica il layout e il rispettivo controller nel sistema
+     * 
+     * @param name
+     * @param privileged
+     */
 	private void carica(String name, Boolean privileged) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("view/" + name + ".fxml"));
@@ -79,6 +117,11 @@ public class ControllerSchermo extends ControllerBackend {
 		if(privileged) privilegi.add(name);
 	}
 	
+	/**
+	 * Carica il rootlayout nel sistema
+	 * @param name
+	 * @param privileged
+	 */
 	private void caricaRoot(String name, Boolean privileged) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("view/" + name + ".fxml"));
@@ -96,10 +139,17 @@ public class ControllerSchermo extends ControllerBackend {
 		this.main = new Scene(rootLayout);
 	}
 	
+	/**
+	 * 
+	 * @return controller della homepage
+	 */
 	public HomePageController getRootController() {
 		return mainController;
 	}
 
+	/**
+	 * Metodo che carica inizialmente tutti i layout del sistema per limitare i tempi di risposta nell'utilizzo
+	 */
 	public void caricaLayouts() {
     	
 		caricaRoot("rootLayout", false);
@@ -143,27 +193,53 @@ public class ControllerSchermo extends ControllerBackend {
 		carica("Informazioni", false);
     }
     
+	/**Metodo per aggiungere dinamicamente una schermata
+	 * 
+	 * @param name
+	 * @param pane
+	 */
     public void addScreen(String name, Pane pane){
          screenMap.put(name, pane);
     }
     
+    /**
+     * Metodo per aggiungere dinamicamente un controller
+     * @param name
+     * @param controller
+     */
     public void addController(String name, ControllerFrontend controller) {
     	controllerMap.put(name, controller);
     }
 
+    /**
+     * Metodo per rimuovere dinamicamente una schermata
+     * @param name
+     */
     public void removeScreen(String name){
         screenMap.remove(name);
     }
     
+    /**
+     * Metodo per rimuovere dinamicamente un controller
+     * @param name
+     */
     public void removeController(String name){
         controllerMap.remove(name);
     }
     
+    /**Metodo per rimuovere dinamicamente schermata e controller
+     * 
+     * @param name
+     */
     public void remove(String name) {
     	screenMap.remove(name);
     	controllerMap.remove(name);
     }
 
+    /**
+     * Metodo che attiva al centro dell'applicazione la schermata desiderata
+     * @param name
+     */
     public void activateOnCenter(String name){
         
     	ControllerSessione.getIstanza().check();
@@ -185,6 +261,10 @@ public class ControllerSchermo extends ControllerBackend {
     	
     }
     
+    /**
+     * Metodo che consente di aprire una finestra con il layout scelto
+     * @param name
+     */
     public void openPaneInWindow(String name) {
     	
     	if(screenMap.get(name) != null) remove(name);
@@ -203,18 +283,32 @@ public class ControllerSchermo extends ControllerBackend {
 		newStage.show();
     }
 
+    /**
+     * 
+     * @return il nuovo stage per la finestra
+     */
 	public Stage getNewStage() {
 		return newStage;
 	}
 	
+	/**
+	 * Imposta il cursore su attesa
+	 */
 	public void setWaitCursor() {
 		main.setCursor(Cursor.WAIT);
 	}
 	
+	/**
+	 * Imposta il cursore su default
+	 */
 	public void setDefaultCursor() {
 		main.setCursor(Cursor.DEFAULT);
 	}
 	
+	/**
+	 * 
+	 * @return l'attuale schermata
+	 */
 	public String getPaneAttuale() {
 		return paneAttuale;
 	}

@@ -9,9 +9,19 @@ import java.util.ArrayList;
 
 import app.DAO.interfaces.DAOParolaChiave;
 import app.model.ParolaChiave;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class MySQL_DAOParolaChiave implements DAOParolaChiave {
 
+	/**Inserisci una parola chiave in una pubblicazione
+	 * 
+	 * @param parola
+	 * @param IDPubblicazione
+	 * @param IDUtente
+	 */
 	@Override
 	public void inserisciParolaChiave(String parola, Integer IDPubblicazione, Integer IDUtente) {
 		
@@ -38,6 +48,12 @@ public class MySQL_DAOParolaChiave implements DAOParolaChiave {
 
 	}
 
+	/**
+	 * 
+	 * @param numPag
+	 * 
+	 * @return lista delle parole chiave per pagina
+	 */
 	@Override
 	public ArrayList<ParolaChiave> getListaParoleChiave(Integer numPag) {
 
@@ -83,6 +99,11 @@ public class MySQL_DAOParolaChiave implements DAOParolaChiave {
 		return null;
 	}
 
+	/**
+	 * @param IDPubblicazione
+	 * 
+	 * @return lista delle parole chiave di una pubblicazione
+	 */
 	@Override
 	public ArrayList<ParolaChiave> getListaParoleChiavePubblicazione(Integer IDPubblicazione) {
 		
@@ -124,6 +145,12 @@ public class MySQL_DAOParolaChiave implements DAOParolaChiave {
 		
 	}
 
+	/**Rimuovi una parola chiave dal sistema
+	 * 
+	 * @param IDParolaChiave
+	 * @param IDUtente
+	 * 
+	 */
 	@Override
 	public void rimuoviParolaChiave(Integer IDParolaChiave, Integer IDUtente) {
 		// TODO Auto-generated method stub
@@ -153,12 +180,11 @@ public class MySQL_DAOParolaChiave implements DAOParolaChiave {
 		}
 	}
 
-	@Override
-	public void aggiornaParolaChiave(Integer IDParolaChiave, String parola) {
-		// TODO Auto-generated method stub
-
-	}
-
+	/**
+	 * Inserisci una nuova parola chiave nel sistema
+	 * 
+	 * @param parola
+	 */
 	@Override
 	public void inserisciParolaChiaveDirect(String parola) {
 		
@@ -180,6 +206,13 @@ public class MySQL_DAOParolaChiave implements DAOParolaChiave {
 		
 	}
 
+	/**
+	 * Aggiungi la relazione tra parola chiave e pubblicazione nel sistema
+	 * 
+	 * @param IDParola
+	 * @param IDPubblicazione
+	 * @param IDUtente
+	 */
 	@Override
 	public void aggiungiTag(Integer IDParola, Integer IDPubblicazione, Integer IDUtente) {
 		
@@ -207,6 +240,13 @@ public class MySQL_DAOParolaChiave implements DAOParolaChiave {
 		
 	}
 
+	/**
+	 * Restituisci la parola chiave data la parola
+	 * 
+	 * @param parola : string
+	 * 
+	 * @return ParolaChiave
+	 */
 	@Override
 	public ParolaChiave getParolaChiave(String parola) {
 		

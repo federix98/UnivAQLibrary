@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 import app.DAO.interfaces.DAORecensione;
 import app.model.Recensione;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class MySQL_DAORecensione implements DAORecensione {
 
 	/**

@@ -1,7 +1,11 @@
 package app.model;
 
 import java.time.LocalDate;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class Moderatore extends Utente {
 	
 	// Attributi

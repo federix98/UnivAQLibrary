@@ -18,7 +18,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class VisualizzaCatalogoController extends ControllerFrontend {
 	
 	@FXML
@@ -61,12 +65,11 @@ public class VisualizzaCatalogoController extends ControllerFrontend {
     private Integer NumTotalePubblicazioni;
 
     private Integer typeFilter = 1;
-    
-	public void initialize() {
-		
-		
-	}
 
+    /**
+     * Aggiorna la tabella in base al filtro
+     * @param type
+     */
 	private void aggiornaTabella(int type) {
 		
 		listaPubblicazioni.clear();
@@ -122,6 +125,9 @@ public class VisualizzaCatalogoController extends ControllerFrontend {
 		
 	}
 
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		
@@ -146,6 +152,9 @@ public class VisualizzaCatalogoController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Handler per accedere ai dettagli della pubblicazione
+	 */
 	@FXML
 	private void handleDettagli() {
 		
@@ -161,6 +170,9 @@ public class VisualizzaCatalogoController extends ControllerFrontend {
 		
 	}
 
+	/**
+	 * Aggiorna il menu di navigazione
+	 */
 	private void aggiornaBottoni() {
 		
 		if((ActualPage * 50) >= NumTotalePubblicazioni) {
@@ -176,6 +188,9 @@ public class VisualizzaCatalogoController extends ControllerFrontend {
 		}
 	}
 	
+	/**
+	 * Gestione pulsante next
+	 */
 	@FXML
 	private void handleNext() {
 		
@@ -185,6 +200,9 @@ public class VisualizzaCatalogoController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Gestione pulsante prev
+	 */
 	@FXML
 	private void handlePrev() {
 		

@@ -9,7 +9,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextArea;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class AggiungiSorgenteController extends ControllerFrontend {
 
 	@FXML
@@ -38,12 +42,8 @@ public class AggiungiSorgenteController extends ControllerFrontend {
     }
 
     /**
-     * Sets the stage of this dialog.
-     * 
-     * @param dialogStage
+     * Salva gli inserimenti effettuati
      */
-
-    
     @FXML
     private void handleSalva() {
     	
@@ -58,18 +58,6 @@ public class AggiungiSorgenteController extends ControllerFrontend {
     	}
     	
     }
-    
-    /**
-     * Sets the person to be edited in the dialog.
-     * 
-     * @param person
-     */
-
-    /**
-     * Returns true if the user clicked OK, false otherwise.
-     * 
-     * @return
-     */
 
 
     /**
@@ -124,6 +112,9 @@ public class AggiungiSorgenteController extends ControllerFrontend {
         }
     }
 
+    /**
+     * Invocato quando viene attivata la schermata
+     */
 	public void load() {
 		
 		URIField.setText("");
@@ -133,10 +124,18 @@ public class AggiungiSorgenteController extends ControllerFrontend {
 		
 	}
 
+	/**
+	 * 
+	 * @return pubblicazione completa
+	 */
 	public PubblicazioneCompleta getPubblicazione() {
 		return pubblicazione;
 	}
 
+	/**
+	 * Set pubblicazione completa
+	 * @param pubblicazione
+	 */
 	public void setPubblicazione(PubblicazioneCompleta pubblicazione) {
 		this.pubblicazione = pubblicazione;
 	}

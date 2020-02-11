@@ -15,7 +15,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class AggiungiParolaChiaveController extends ControllerFrontend {
 
 	@FXML
@@ -71,6 +75,9 @@ public class AggiungiParolaChiaveController extends ControllerFrontend {
     	
     }
     
+    /**
+     * Aggiungi una parola chiave esistente nel sistema
+     */
     @FXML
     private void handleAggiungiEsistente() {
     	
@@ -80,18 +87,7 @@ public class AggiungiParolaChiaveController extends ControllerFrontend {
 		ControllerSchermo.istanzaManager().getNewStage().close();
     	
     }
-    
-    /**
-     * Sets the person to be edited in the dialog.
-     * 
-     * @param person
-     */
 
-    /**
-     * Returns true if the user clicked OK, false otherwise.
-     * 
-     * @return
-     */
 
 
     /**
@@ -131,8 +127,10 @@ public class AggiungiParolaChiaveController extends ControllerFrontend {
         }
     }
 
+    /**
+     * Metodo invocato quando la schermata viene settata al centro del Pane principale
+     */
 	public void load() {
-		// TODO Auto-generated method stub
 		
 		ParolaField.setText("");
 		
@@ -148,10 +146,18 @@ public class AggiungiParolaChiaveController extends ControllerFrontend {
 		
 	}
 
+	/**
+	 * 
+	 * @return pubblicazione attualmente in analisi
+	 */
 	public PubblicazioneCompleta getPubblicazione() {
 		return pubblicazione;
 	}
 
+	/**
+	 * Setta la pubblicazione sulla quale operare
+	 * @param pubblicazione
+	 */
 	public void setPubblicazione(PubblicazioneCompleta pubblicazione) {
 		this.pubblicazione = pubblicazione;
 	}

@@ -12,7 +12,11 @@ import app.DAO.interfaces.DAOPubblicazione;
 import app.model.Pubblicazione;
 import app.model.PubblicazioneCompleta;
 import app.model.PubblicazioneRistampa;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class MySQL_DAOPubblicazione implements DAOPubblicazione {
 
 	/**

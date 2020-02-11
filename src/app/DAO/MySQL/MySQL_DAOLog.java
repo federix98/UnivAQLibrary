@@ -10,9 +10,18 @@ import java.util.ArrayList;
 import app.DAO.interfaces.DAOLog;
 import app.model.Log;
 import app.model.TipoStoria;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class MySQL_DAOLog implements DAOLog {
 
+	/**
+	 * @param NumeroPagine
+	 * 
+	 * @return lista dei logs per pagina
+	 */
 	@Override
 	public ArrayList<Log> getLogs(Integer NumeroPagina) {
 		
@@ -87,6 +96,11 @@ public class MySQL_DAOLog implements DAOLog {
 		return null;
 	}
 
+	/**
+	 * @param tipo
+	 * 
+	 * @return lista dei logs di quel tipo
+	 */
 	@Override
 	public ArrayList<Log> getLogsTipo(TipoStoria tipo) {
 		Connection conn = null;
@@ -170,6 +184,9 @@ public class MySQL_DAOLog implements DAOLog {
 		return null;
 	}
 
+	/**
+	 * @return numero totale di logs nel DB
+	 */
 	@Override
 	public Integer getNumLogs() {
 		

@@ -13,7 +13,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class RegistrazioneController extends ControllerFrontend {
 
 	@FXML
@@ -67,6 +71,9 @@ public class RegistrazioneController extends ControllerFrontend {
 	@FXML
 	private Button Registrati;
 	
+	/**
+	 * Metodo invocato al caricamento iniziale della schermata
+	 */
 	public void initialize() {
 		
 		for(String s : ControllerUtente.getIstanza().getProvince()) {
@@ -77,6 +84,9 @@ public class RegistrazioneController extends ControllerFrontend {
 		Error.setVisible(false);
 	}
 	
+	/**
+	 * Handle per registrarsi
+	 */
 	@FXML
 	public void handleRegistrati() {
 		
@@ -117,16 +127,32 @@ public class RegistrazioneController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * 
+	 * @param email
+	 * @return true se email valida, false altrimenti
+	 */
 	public static boolean isValidEmail(String email) {
 	      String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 	      return email.matches(regex);
 	   }
 	
+	/**
+	 * 
+	 * @param nickname
+	 * @return true se nickname valido, false altrimenti
+	 */
 	public boolean isValidNickname(String nickname) {
 		if(nickname.length() > 45) return false;
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param password
+	 * @param confirm
+	 * @return true se password valida, false altrimenti
+	 */
 	public boolean isValidPassword(String password, String confirm) {
 		
 		if(password.length() > 45 || password.length() < 8) return false;
@@ -136,12 +162,20 @@ public class RegistrazioneController extends ControllerFrontend {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param passwordInChiaro
+	 * @return Password cifrata
+	 */
 	public String criptaPassword(String passwordInChiaro) {
 		
 		return BCrypt.hashpw(passwordInChiaro, BCrypt.gensalt());
 		
 	}
 
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		// TODO Auto-generated method stub

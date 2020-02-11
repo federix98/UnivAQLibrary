@@ -8,25 +8,47 @@ import app.controller.abstracts.ControllerBackend;
 import app.model.Moderatore;
 import app.model.Utente;
 import app.utility.BCrypt;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class ControllerUtente extends ControllerBackend {
 	
 	private static ControllerUtente istanzaController = new ControllerUtente();
 
 	private DAOUtente DAO = null;
 	
+	/**
+	 * Costruttore privato del controller
+	 */
 	private ControllerUtente() {
 		DAO = DAOFactory.getDAOFactory(0).getDAOUtente();
 	}
 	
+	/**
+	 * 
+	 * @return istanza singleton del controller
+	 */
 	public static ControllerUtente getIstanza() {
 		return istanzaController;
 	}
 	
+	/**
+	 * Inserisci un utente nel sistema
+	 * @param utente
+	 * @return ID dell'utente inserito
+	 */
 	public Integer inserisciUtente(Utente utente) {
 		return DAO.inserisciUtente(utente.getNickName(), utente.getEmail(), utente.getPassword(), utente.getNome(), utente.getCognome(), utente.getDataNascita(), utente.getLuogoNascita(), utente.getResidenza());
 	}
 	
+	/**
+	 * Effettua l'accesso dell'utete
+	 * @param username
+	 * @param password
+	 * @return L'utente che ha effettutato l'accesso
+	 */
 	public Utente accessoUtente(String username, String password) {
 		
 		Integer IDUtente = DAO.getIDUtenteFromUsername(username);
@@ -43,18 +65,35 @@ public class ControllerUtente extends ControllerBackend {
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @return elenco delle province nel sistema
+	 */
 	public ArrayList<String> getProvince() {
 		return DAO.getProvince();
 	}
 	
+	/**
+	 * 
+	 * @param IDUtente
+	 * @return Oggetto utente in base all'ID
+	 */
 	public Utente getUtente(Integer IDUtente) {
 		return DAO.getUtente(IDUtente);
 	}
 	
+	/**
+	 * 
+	 * @return elenco degli utenti più collaborativi
+	 */
 	public ArrayList<Moderatore> getUtentiCollaborativi() {
 		return DAO.getUtentiCollaborativi();
 	}
 	
+	/**
+	 * 
+	 * @return tutti gli utenti del sistema
+	 */
 	public ArrayList<Utente> getUtentiSistema() {
 		ArrayList<Utente> result = new ArrayList<Utente>();
 		
@@ -66,6 +105,11 @@ public class ControllerUtente extends ControllerBackend {
 	}
 	
 	// TO CHECK
+	/**
+	 * Effettua la promozione dell'utente
+	 * @param ruolo
+	 * @param IDUtente
+	 */
 	public void promuoviUtente(Integer ruolo, Integer IDUtente) {
 		
 		if(ruolo < 3 || ruolo > 4) return;
@@ -103,6 +147,11 @@ public class ControllerUtente extends ControllerBackend {
 		
 	}
 	
+	/**
+	 * Cambia la password dell'utente
+	 * @param newPassword
+	 * @param utente
+	 */
 	public void cambiaPassword(String newPassword, Utente utente) {
 		
 		String hash = BCrypt.hashpw(newPassword, BCrypt.gensalt());
@@ -110,6 +159,10 @@ public class ControllerUtente extends ControllerBackend {
 		
 	}
 	
+	/**
+	 * Aggiorna i metadati dell'utente
+	 * @param utente
+	 */
 	public void aggiornaUtente(Utente utente) {
 		DAO.aggiornaUtente(utente.getID(), utente.getNickName(), utente.getEmail(), utente.getPassword(), utente.getNome(), utente.getCognome(), utente.getDataNascita(), utente.getLuogoNascita(), utente.getResidenza());
 	}

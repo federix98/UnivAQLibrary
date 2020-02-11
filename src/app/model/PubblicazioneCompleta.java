@@ -2,7 +2,11 @@ package app.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class PubblicazioneCompleta extends Pubblicazione {
 	
 	

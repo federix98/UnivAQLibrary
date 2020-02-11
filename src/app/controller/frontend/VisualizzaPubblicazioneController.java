@@ -31,7 +31,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class VisualizzaPubblicazioneController extends ControllerFrontend {
 
 	private Boolean showAll = false;
@@ -256,25 +260,7 @@ public class VisualizzaPubblicazioneController extends ControllerFrontend {
 	private void handleEsci() {
 	}
 	
-	@FXML
-	private void handleAutori() {
-		
-	}
 	
-	@FXML
-	private void handleParole() {
-		
-	}
-	
-	@FXML
-	private void handleRistampe() {
-		
-	}
-	
-	@FXML
-	private void handleSorgenti() {
-		
-	}
 	
 	/**
 	 * 

@@ -17,7 +17,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class GestioneCatalogoController extends ControllerFrontend {
 	
 	@FXML
@@ -52,12 +56,10 @@ public class GestioneCatalogoController extends ControllerFrontend {
     
     private ObservableList<Pubblicazione> listaPubblicazioni = FXCollections.observableArrayList();
 
-	public void initialize() {
-		
-		aggiornaLista(1);
-		
-	}
-
+	/**
+	 * Aggiorna la lista del catalogo
+	 * @param i
+	 */
 	private void aggiornaLista(int i) {
 		
 		listaPubblicazioni.clear();
@@ -90,7 +92,7 @@ public class GestioneCatalogoController extends ControllerFrontend {
 			// Riempie la tabella con i vari campi
 	    	ISBNtc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getISBN()));
 	    	Titolotc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTitolo()));
-	    	Autoritc.setCellValueFactory(cellData -> new SimpleStringProperty(new MySQL_DAOAutore().getListaAutoriPubblicazioneString(cellData.getValue().getID())));
+	    	Autoritc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getListaAutori()));
 	    	Editoretc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEditore()));
 	    	Likestc.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getNumLike()).asObject());
 	    	Recensionitc.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getNumLike()).asObject());
@@ -108,6 +110,9 @@ public class GestioneCatalogoController extends ControllerFrontend {
 		
 	}
 
+	/**
+	 * Manda su inserisci pubblicazione
+	 */
 	@FXML
 	private void handleInserisci() {
 		
@@ -115,6 +120,9 @@ public class GestioneCatalogoController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Visualizza i dettagli della pubblicazione
+	 */
 	@FXML
 	private void handleDettagli() {
 		
@@ -129,10 +137,12 @@ public class GestioneCatalogoController extends ControllerFrontend {
 		
 	}
 	
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
-		// TODO Auto-generated method stub
-		
+		aggiornaLista(1);
 	}
 	
 }

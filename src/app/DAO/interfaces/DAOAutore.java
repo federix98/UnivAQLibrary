@@ -3,7 +3,11 @@ package app.DAO.interfaces;
 import java.util.ArrayList;
 
 import app.model.Autore;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public interface DAOAutore {
 
 	// Metodi
@@ -13,8 +17,6 @@ public interface DAOAutore {
 	public ArrayList<Autore> getListaAutori(Integer numPag);
 	
 	public void aggiungiScritto(Integer IDAutore, Integer IDPubblicazione, Integer IDUtente);
-	
-	public String getListaAutoriPubblicazioneString(Integer IDPubblicazione);
 	
 	public ArrayList<Autore> getListaAutoriPubblicazione(Integer IDPubblicazione);
 	

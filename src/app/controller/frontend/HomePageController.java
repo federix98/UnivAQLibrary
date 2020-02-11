@@ -9,7 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class HomePageController extends ControllerFrontend {
 
 	

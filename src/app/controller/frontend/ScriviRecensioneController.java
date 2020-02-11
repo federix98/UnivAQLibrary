@@ -9,7 +9,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class ScriviRecensioneController extends ControllerFrontend {
 
 	@FXML
@@ -24,7 +28,9 @@ public class ScriviRecensioneController extends ControllerFrontend {
 	@FXML
 	private Button PubblicaButton;
 	
-	
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		
@@ -33,6 +39,9 @@ public class ScriviRecensioneController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Handler per pubblicazione della recensione
+	 */
 	@FXML
 	private void handlePubblica() {
 		

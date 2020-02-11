@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import app.model.Pubblicazione;
 import app.model.PubblicazioneCompleta;
 import app.model.PubblicazioneRistampa;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public interface DAOPubblicazione {
 
 	// Metodi

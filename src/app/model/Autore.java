@@ -1,5 +1,9 @@
 package app.model;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class Autore {
 
 	// Attributi Autore
@@ -11,18 +15,32 @@ public class Autore {
 	private String cognome;
 	
 	
-	// Costruttori
 	
+	/**
+	 * Costruttore
+	 * @param nome
+	 */
 	public Autore(String nome) {
 		this.setNome(nome);
 		this.setCognome("");
 	}
 	
+	/**
+	 * Costruttore
+	 * @param nome
+	 * @param cognome
+	 */
 	public Autore(String nome, String cognome) {
 		this.setNome(nome);
 		this.setCognome(cognome);
 	}
 	
+	/**
+	 * Costruttore
+	 * @param ID
+	 * @param nome
+	 * @param cognome
+	 */
 	public Autore(Integer ID, String nome, String cognome) {
 		this.setID(ID);
 		this.setCognome(cognome);

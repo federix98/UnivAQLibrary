@@ -6,7 +6,11 @@ import app.controller.backend.ControllerSessione;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class BarraLateraleController extends ControllerFrontend {
 
 	@FXML
@@ -18,6 +22,9 @@ public class BarraLateraleController extends ControllerFrontend {
 	@FXML
 	private Button Logout;
 	
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		
@@ -25,6 +32,9 @@ public class BarraLateraleController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Attiva pannello gestione
+	 */
 	@FXML
 	private void handlePannello() {
 		
@@ -32,6 +42,9 @@ public class BarraLateraleController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Effettua logout
+	 */
 	@FXML
 	private void handleLogout() {
 		ControllerSessione.getIstanza().logout();

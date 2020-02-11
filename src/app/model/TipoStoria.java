@@ -1,5 +1,9 @@
 package app.model;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public enum TipoStoria {
 
 	INSERIMENTO_PUBBLICAZIONE,

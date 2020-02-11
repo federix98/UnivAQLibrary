@@ -15,7 +15,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class GestioneUtentiController extends ControllerFrontend {
 
 	@FXML
@@ -44,6 +48,9 @@ public class GestioneUtentiController extends ControllerFrontend {
 	
 	// FXML METHODS
 	
+	/**
+	 * Invocato al caricamento iniziale della schermata
+	 */
 	@FXML
 	private void initialize() {
 		
@@ -67,6 +74,9 @@ public class GestioneUtentiController extends ControllerFrontend {
 		
 	}
 
+	/**
+	 * Promuovi un utente
+	 */
 	@FXML
 	private void handlePromuovi() {
 		
@@ -77,6 +87,9 @@ public class GestioneUtentiController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * In base al ruolo setta cosa si può fare e cosa no
+	 */
 	@FXML
 	private void handleRuolo() {
 		
@@ -105,6 +118,9 @@ public class GestioneUtentiController extends ControllerFrontend {
 		
 	}
 
+	/**
+	 * Aggiorna la tabella utenti
+	 */
 	private void refreshTable() {
 		
 		listaUtenti.clear();
@@ -127,6 +143,9 @@ public class GestioneUtentiController extends ControllerFrontend {
 		
 	}
 
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 
@@ -134,7 +153,10 @@ public class GestioneUtentiController extends ControllerFrontend {
 		
 	}
 
-	
+	/**
+	 * Mostra i dati dell'utente selezionato
+	 * @param newValue
+	 */
 	private void mostraUtente(Utente newValue) {
 		
 		if(newValue == null) return;

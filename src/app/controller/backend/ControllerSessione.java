@@ -4,7 +4,11 @@ import app.controller.abstracts.ControllerBackend;
 import app.model.Pubblicazione;
 import app.model.Utente;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class ControllerSessione extends ControllerBackend {
 
 	
@@ -26,20 +30,28 @@ public class ControllerSessione extends ControllerBackend {
 	
 	
 	
-	// COSTRUTTORE
+	/**
+	 * 
+	 * @return lo stage primario dell'applicazione
+	 */
 	
 	public Stage getPrimaryStage() {
 		return primaryStage;
 	}
 
 
-
+	/**
+	 * Setta il primaryStage dell'app
+	 * @param primaryStage
+	 */
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 	}
 
 
-
+	/**
+	 * Costruttore privato del controller
+	 */
 	private ControllerSessione() {
 		
 	}
@@ -47,7 +59,10 @@ public class ControllerSessione extends ControllerBackend {
 	
 	
 	// GET ISTANZA SINGLETON
-	
+	/**
+	 * 
+	 * @return istanza singleton del controller
+	 */
 	public static ControllerSessione getIstanza() {
 		return session;
 	}
@@ -56,17 +71,27 @@ public class ControllerSessione extends ControllerBackend {
 	
 	
 	// METODI PUBBLICI
-	
+	/**
+	 * 
+	 * @return l'utente in questo momento loggato
+	 */
 	public Utente getUtenteLoggato() {
 		return utenteLoggato;
 	}
 
+	/**
+	 * Setta l'utente che si è appena loggato
+	 * @param utenteLoggato
+	 */
 	public void setUtenteLoggato(Utente utenteLoggato) {
 
 		this.utenteLoggato = utenteLoggato;		
 		
 	}
 
+	/**
+	 * Effettua il logout dell'utente
+	 */
 	public void logout() {
 		
 		ControllerSchermo.istanzaManager().getRootController().refreshAfterLogout();
@@ -75,28 +100,45 @@ public class ControllerSessione extends ControllerBackend {
 	
 	}
 	
+	/**
+	 * 
+	 * @return la pubblicazione che l'utente ha preso in analisi
+	 */
 	public Pubblicazione getPubblicazioneSelezionata() {
 		
 		return pubblicazioneSelezionata;
 
 	}
 	
+	/**
+	 * Setta la pubblicazione che l'utente ha preso in analisi
+	 * @param pubblicazione
+	 */
 	public void setPubblicazioneSelezionata(Pubblicazione pubblicazione) {
 		
 		if(pubblicazione.getID() != null) this.pubblicazioneSelezionata = pubblicazione;
 		
 	}
 
-	
+	/**
+	 * 
+	 * @return la pagina precedentemente visitata
+	 */
 	public String getPaginaPrecedente() {
 		return paginaPrecedente;
 	}
 
-	
+	/**
+	 * Setta la pagina precedentemente visitata
+	 * @param paginaPrecedente
+	 */
 	public void setPaginaPrecedente(String paginaPrecedente) {
 		this.paginaPrecedente = paginaPrecedente;
 	}
 
+	/**
+	 * Metodo che si occupa di gestire i vari pulsanti del rootlayout in base a quello che l'utente sta facendo
+	 */
 	public void check() {
 		
 		this.paginaPrecedente = ControllerSchermo.istanzaManager().getPaneAttuale();

@@ -23,7 +23,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class InserisciPubblicazioneController extends ControllerFrontend {
 
 	
@@ -134,6 +138,10 @@ public class InserisciPubblicazioneController extends ControllerFrontend {
 	
 	private PubblicazioneCompleta daInserire;
 	
+	
+	/**
+	 * Inserisci la pubblicazione
+	 */
 	@FXML
 	private void handleInserisci() {
 		
@@ -190,6 +198,9 @@ public class InserisciPubblicazioneController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Annulla inserimento
+	 */
 	@FXML
 	private void handleAnnulla() {
 		
@@ -205,6 +216,9 @@ public class InserisciPubblicazioneController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Attiva aggiungi autore
+	 */
 	@FXML
 	private void handleAutori() {
 		
@@ -214,6 +228,9 @@ public class InserisciPubblicazioneController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Attiva aggiugi parola
+	 */
 	@FXML
 	private void handleParole() {
 		
@@ -223,6 +240,9 @@ public class InserisciPubblicazioneController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Attiva aggiungi ristampe
+	 */
 	@FXML
 	private void handleRistampe() {
 		
@@ -233,6 +253,9 @@ public class InserisciPubblicazioneController extends ControllerFrontend {
 		
 	}
 	
+	/**
+	 * Attiva aggiungi sorgente
+	 */
 	@FXML
 	private void handleSorgenti() {
 		
@@ -242,10 +265,9 @@ public class InserisciPubblicazioneController extends ControllerFrontend {
 		
 	}
 	
-	public void initialize() {
-		
-	}
-
+	/**
+     * Invocato quando viene attivata la schermata
+     */
 	@Override
 	public void load() {
 		

@@ -1,5 +1,9 @@
 package app.utility;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public enum ManageCapabilities {
 	RICERCA, 
 	CLASSIFICHE,

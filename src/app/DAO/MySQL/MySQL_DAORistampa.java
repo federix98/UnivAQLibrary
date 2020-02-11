@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 import app.DAO.interfaces.DAORistampa;
 import app.model.Ristampa;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class MySQL_DAORistampa implements DAORistampa {
 
 	/**

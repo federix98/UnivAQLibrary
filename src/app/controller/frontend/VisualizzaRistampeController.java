@@ -15,7 +15,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public class VisualizzaRistampeController extends ControllerFrontend {
 	
 	@FXML
@@ -45,12 +49,10 @@ public class VisualizzaRistampeController extends ControllerFrontend {
     private Integer ActualPage = 1;
     
     private Integer NumTotalePubblicazioni;
-    
-	public void initialize() {
-		
-		
-	}
 
+    /**
+     * Aggiorna la tabella delle ristampe
+     */
 	private void aggiornaTabella() {
 		
 		listaPubblicazioni.clear();

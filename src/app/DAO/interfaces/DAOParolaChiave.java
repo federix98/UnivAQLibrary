@@ -3,7 +3,11 @@ package app.DAO.interfaces;
 import java.util.ArrayList;
 
 import app.model.ParolaChiave;
-
+/**
+ * 
+ * @author Federico Di Menna
+ *
+ */
 public interface DAOParolaChiave {
 
 	// Metodi
@@ -19,8 +23,6 @@ public interface DAOParolaChiave {
 	public ArrayList<ParolaChiave> getListaParoleChiavePubblicazione(Integer IDPubblicazione);
 	
 	public void rimuoviParolaChiave(Integer IDParolaChiave, Integer IDUtente);
-	
-	public void aggiornaParolaChiave(Integer IDParolaChiave, String parola);
 	
 	public void inserisciParolaChiaveDirect(String parola);
 }
