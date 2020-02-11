@@ -33,9 +33,9 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-
+		
 		ControllerSchermo.istanzaManager().caricaLayouts();
-		/*
+		
 		Splash splash = new Splash();
         splash.show();
         primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -50,7 +50,7 @@ public class Main extends Application {
             timeline.setOnFinished((event) -> {
                 this.primaryStage = primaryStage;
 				this.primaryStage.setTitle("Progetto OOSD - Libreria");
-				//primaryStage.getIcons().add(new Image("res/imgs/icon.png"));
+				primaryStage.getIcons().add(new Image("res/imgs/icon.png"));
 				
 				initRootLayout();
 				
@@ -58,15 +58,7 @@ public class Main extends Application {
             });
             timeline.play();
         });
-        */
-        
-        this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Progetto OOSD - Libreria");
-		//primaryStage.getIcons().add(new Image("res/imgs/icon.png"));
-		
-		initRootLayout();
-		
-		ControllerSchermo.istanzaManager().activateOnCenter("Login");
+                
         
         primaryStage.show();
         
