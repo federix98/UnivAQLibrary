@@ -334,7 +334,7 @@ public class MySQL_DAOUtente implements DAOUtente{
 		Connection conn = null;
 		PreparedStatement pStmt = null;
 		
-		if(getUtente(IDUtente).getRuolo() <= 3) return;
+		if(getUtente(IDUtente).getRuolo() <= Utente.getIdFromRuolo("Moderatore")) return;
 
 		try {
 

@@ -112,10 +112,12 @@ public class ControllerUtente extends ControllerBackend {
 	 */
 	public void promuoviUtente(Integer ruolo, Integer IDUtente) {
 		
-		if(ruolo < 3 || ruolo > 4) return;
+		if(ruolo < Utente.getIdFromRuolo("Moderatore") || ruolo > Utente.getIdFromRuolo("Amministratore")) return;
 		
 		Integer IDPromotore = ControllerSessione.getIstanza().getUtenteLoggato().getID();
 		Integer ruoloPrec = DAO.getUtente(IDUtente).getRuolo();
+		
+		
 		
 		switch(ruoloPrec) {
 			case 1:
@@ -123,10 +125,10 @@ public class ControllerUtente extends ControllerBackend {
 				
 			case 2: {
 				// POSSO SOLTANTO PROMUOVERE
-				if(ruolo == 3) {
+				if(ruolo == Utente.getIdFromRuolo("Moderatore")) {
 					DAO.promuoviUtenteAModeratore(IDUtente, IDPromotore);
 				}
-				else if(ruolo == 4) {
+				else if(ruolo == Utente.getIdFromRuolo("Amministratore")) {
 					DAO.promuoviUtenteAModeratore(IDUtente, IDPromotore);
 					DAO.promuoviUtenteAdAmministratore(IDUtente);
 				}

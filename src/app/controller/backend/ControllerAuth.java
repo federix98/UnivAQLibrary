@@ -46,22 +46,22 @@ public class ControllerAuth extends ControllerBackend {
 		
 		
 		if(capability == ManageCapabilities.APPROVA_RECENSIONI) {
-			if(logged.getRuolo() >= 3) return true;
+			if(logged.getRuolo() >= Utente.getIdFromRuolo("Moderatore")) return true;
 			return false;
 		}
 		
 		if(capability == ManageCapabilities.GESTIONE_CATALOGO) {
-			if(logged.getRuolo() >= 3) return true;
+			if(logged.getRuolo() >= Utente.getIdFromRuolo("Moderatore")) return true;
 			return false;
 		}
 		
 		if(capability == ManageCapabilities.GESTIONE_UTENTI) {
-			if(logged.getRuolo() >= 4) return true;
+			if(logged.getRuolo() >= Utente.getIdFromRuolo("Amministratore")) return true;
 			return false;
 		}
 		
 		if(capability == ManageCapabilities.LOGS) {
-			if(logged.getRuolo() == 5) return true;
+			if(logged.getRuolo() == Utente.getIdFromRuolo("Super Amministratore")) return true;
 			return false;
 		}
 		return false;

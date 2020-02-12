@@ -1,6 +1,7 @@
 package app.model;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 /**
  * 
  * @author Federico Di Menna
@@ -35,6 +36,21 @@ public class Utente {
 	
 	private LocalDate dataNascita;
 	
+	private static HashMap<Integer, String> ruoli_nomi = new HashMap();
+	private static HashMap<String, Integer> nomi_ruoli = new HashMap();
+	
+	static {
+        ruoli_nomi.put(1, "Utente Passivo");
+        ruoli_nomi.put(2, "Utente Attivo");
+        ruoli_nomi.put(3, "Moderatore");
+        ruoli_nomi.put(4, "Amministratore");
+        ruoli_nomi.put(5, "Super Amministratore");
+        nomi_ruoli.put("Utente Passivo", 1);
+        nomi_ruoli.put("Utente Attivo", 2);
+        nomi_ruoli.put("Moderatore", 3);
+        nomi_ruoli.put("Amministratore", 4);
+        nomi_ruoli.put("Super Amministratore", 5);
+    }
 	
 	// Costruttori
 
@@ -175,5 +191,14 @@ public class Utente {
 
 	public void setDataNascita(LocalDate dataNascita) {
 		this.dataNascita = dataNascita;
+	}
+	
+	public final static String getRuoloFromId(Integer ID) {
+		if(ID < 1 || ID > 5 ) throw new IllegalArgumentException();
+		else return ruoli_nomi.get(ID);
+	}
+	
+	public final static Integer getIdFromRuolo(String nome) {
+		return nomi_ruoli.get(nome);
 	}
 }
