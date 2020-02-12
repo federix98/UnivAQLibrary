@@ -137,6 +137,16 @@ public class ControllerPubblicazione extends ControllerBackend {
 		
 		return DAO.getListaPubblicazioniAutoreNomeCognome(nomeAutore, cognomeAutore);
 	}
+	
+	/**
+	 * 
+	 * @param nomeAutore
+	 * @return lista pubblicazioni con quell'autore
+	 */
+	public ArrayList<Pubblicazione> getListaPubblicazioniAutoreNome(String nomeAutore) {
+		
+		return DAO.getListaPubblicazioniAutoreNome(nomeAutore); 
+	}
 
 	/**
 	 * 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.frontend.ClassificheController">
+   <children>
+      <AnchorPane prefHeight="430.0" prefWidth="800.0" styleClass="background" stylesheets="@../application.css">
+         <children>
+            <TableView fx:id="TabellaPubblicazioni" layoutX="14.0" layoutY="49.0" prefHeight="368.0" prefWidth="247.0" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="539.0" AnchorPane.topAnchor="49.0">
+              <columns>
+                <TableColumn fx:id="ISBNtc" editable="false" prefWidth="69.33330917358398" resizable="false" sortable="false" text="ISBN" />
+                <TableColumn fx:id="Titolotc" editable="false" prefWidth="152.66667938232422" resizable="false" sortable="false" text="Titolo" />
+              </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="23.0" styleClass="titleLabel" text="Ultime 10 pubblicazioni inserite" />
+            <TableView fx:id="TabellaPAggiornate" layoutX="271.0" layoutY="48.0" prefHeight="368.0" prefWidth="247.0">
+              <columns>
+                <TableColumn fx:id="ISBNAtc" prefWidth="75.0" text="ISBN" />
+                <TableColumn fx:id="TitoloAtc" prefWidth="155.33331298828125" text="Titolo" />
+              </columns>
+            </TableView>
+            <Label layoutX="315.0" layoutY="23.0" styleClass="titleLabel" text="Aggiornate di recente" />
+            <TableView fx:id="TabellaUtenti" layoutX="539.0" layoutY="48.0" prefHeight="368.0" prefWidth="257.0">
+              <columns>
+                <TableColumn fx:id="Nicknametc" prefWidth="117.3333740234375" text="Nickname" />
+                <TableColumn fx:id="NumPubbtc" prefWidth="126.66671752929688" text="# Pubblicazioni" />
+              </columns>
+            </TableView>
+            <Label layoutX="583.0" layoutY="23.0" styleClass="titleLabel" text="Utenti più collaborativi" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.frontend.InformazioniController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../application.css">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="104.0" layoutX="261.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../res/imgs/logo2.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="199.0" layoutY="77.0" styleClass="accessLab" text="Informazioni Generali" />
+            <TextFlow layoutX="49.0" layoutY="105.0" prefHeight="190.0" prefWidth="513.0">
+               <children>
+                  <VBox prefHeight="190.0" prefWidth="501.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Progetto realizzato per il corso di Object Oriented Software Design dell'Università degli Studi dell'Aquila. (2018/2019)" textAlignment="CENTER" wrappingWidth="536.9901885986328">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="L'applicativo è un software gestionale di una biblioteca, che offre servizi di gestione delle pubblicazioni e dell'utenza. Esso è stato sviluppato secondo il pattern architetturale Model View Controller (MVC) utilizzando la piattaforma JavaFX." textAlignment="CENTER" wrappingWidth="511.6568775177002">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Il progetto si appoggia al database realizzato per il corso Laboratorio di Basi di Dati." textAlignment="CENTER" wrappingWidth="504.9902515411377" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </TextFlow>
+            <ImageView fitHeight="65.0" fitWidth="161.0" layoutX="261.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../res/imgs/JavaFX.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="52.0" fitWidth="43.0" layoutX="474.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../res/imgs/SceneBuilderLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="169.0" layoutX="33.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../res/imgs/eclipse.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="33.0" layoutY="301.0" text="Federico Di Menna" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
